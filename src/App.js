@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Homepage from "./Main/Homepage/Homepage";
+import HomePage from "./Main/Homepage/HomePage";
 import SingleCharacter from "./Main/SingleCharacter/SingleCharacter";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <Fragment>
       <Header />
       <Switch>
-        <Route exact path="/" component={Homepage} />
+        <Route exact path="/" component={HomePage} />
         <Route path="/singe-hero/:id" component={SingleCharacter} />
       </Switch>
       <Footer />

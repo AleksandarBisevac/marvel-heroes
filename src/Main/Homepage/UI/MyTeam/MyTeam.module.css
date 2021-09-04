@@ -1,0 +1,15 @@
+.my-team {
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.my-team img {
+  max-width: 75px;
+  max-height: 75px;
+}
+.my-team p {
+  flex: 1 1 100%;
+  text-align: center;
+}

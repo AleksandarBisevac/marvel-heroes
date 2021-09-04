@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import SingleCharacter from "./Main/SingleCharacter/SingleCharacter";
-import Homepage from "./Main/Homepage/HomePage";
+import Homepage from "./Main/Homepage/Homepage";
 
 function App() {
   return (

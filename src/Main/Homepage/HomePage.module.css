@@ -1,0 +1,16 @@
+.homepage-wrapper {
+  padding: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 8fr 2.5fr;
+}
+
+.some-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7%;
+  border: 1px solid #000;
+  margin-right: 5%;
+}

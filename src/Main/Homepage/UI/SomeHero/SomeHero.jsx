@@ -1,44 +1,39 @@
 import React, { Fragment } from "react";
 
+import classes from "./SomeHero.module.css";
 
-import classes from "./SomeHero.module.css"
+const SomeHero = ({ hero, addHero }) => {
+  const onClick__addBtn = () => {
+    addHero({
+      name: hero.name,
+      id: hero.id,
+      image: hero.thumbnail.path + "." + hero.thumbnail.extension,
+    });
+  };
 
-const SomeHero = () => {
   return (
     <Fragment>
-        <article className={classes.hero}>
-        <h3>Some Hero</h3>
-        <div className={classes["hero-img"]}>
-          <img src="http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/standard_xlarge.jpg" alt="img_hero" />
-        </div>
-        <div className={classes["hero-btn"]}>
-          <button className="btn-info">Info</button>
-          <button className="btn-add">Add</button>
-        </div>
-        </article >
-        <article className={classes.hero}>
-        <h3>Some Hero</h3>
-        <div className={classes["hero-img"]}>
-          <img src="http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/standard_xlarge.jpg" alt="img_hero" />
-        </div>
-        <div className={classes["hero-btn"]}>
-          <button className="btn-info">Info</button>
-          <button className="btn-add">Add</button>
-        </div>
-      </article>
       <article className={classes.hero}>
-        <h3>Some Hero</h3>
+        <h3>{hero.name}</h3>
         <div className={classes["hero-img"]}>
-          <img src="http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/standard_xlarge.jpg" alt="img_hero" />
+          <img
+            src={hero.thumbnail.path + "." + hero.thumbnail.extension}
+            alt="img_hero"
+          />
         </div>
         <div className={classes["hero-btn"]}>
           <button className="btn-info">Info</button>
-          <button className="btn-add">Add</button>
+          <button
+            className="btn-add"
+            onClick={() => {
+              onClick__addBtn();
+            }}
+          >
+            Add
+          </button>
         </div>
       </article>
     </Fragment>
-    
-
   );
 };
 

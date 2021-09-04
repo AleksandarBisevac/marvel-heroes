@@ -1,16 +1,29 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import TeamCard from "./TeamCard/TeamCard";
 
-import classes from "./MyTeam.module.css";
+const MyTeam = ({ addHero }) => {
+  const [heroTeam, setHeroTeam] = useState([]);
 
-const MyTeam = () => {
+  const addToTeam = () => {
+    if (addHero.name) {
+      setHeroTeam([...heroTeam, addHero]);
+    }
+  };
+
+  useEffect(addToTeam, [addHero]);
 
   return (
-    <div className={classes["my-team"]}>
-      <img src="http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/standard_xlarge.jpg" alt="img_hero" />
-      <p>Some Hero</p>
-    </div>
+    <Fragment>
+      {heroTeam
+        .filter(
+          (hero, index, array) =>
+            array.findIndex((t) => t.id === hero.id) === index
+        )
+        .map((hero) => (
+          <TeamCard key={hero.id} hero={hero} />
+        ))}
+    </Fragment>
   );
 };
-
 
 export default MyTeam;
